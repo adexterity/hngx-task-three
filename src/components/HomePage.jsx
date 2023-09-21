@@ -38,9 +38,11 @@ const HomePage = () => {
             <LoginButton />
             <LogoutButton />
           </div>
-          <div className="text-center mt-5">
-            <SearchBar getSearchImages={getSearchImages} />
-          </div>
+          {isAuthenticated && (
+            <div className="text-center mt-5">
+              <SearchBar getSearchImages={getSearchImages} />
+            </div>
+          )}
           {isAuthenticated && <GalleryPage images={images} />}
         </>
       )}
