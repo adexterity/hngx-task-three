@@ -44,12 +44,12 @@ const SearchBar = ({ getSearchImages }) => {
         placeholder="Search Anything..."
         onChange={handleInputChange}
         onKeyDown={handleEnterSearch}
-        className="text-[20px] p-1"
+        className="text-[10px] sm:text-[20px] p-1"
       />
       <button
         onClick={handleButtonSearch}
         disabled={!searchValue}
-        className="bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700  border-4 text-white py-[1px] px-2 rounded text-[25px]"
+        className="bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700  border-4 text-white py-[1px] px-2 rounded text-[15px] sm:text-[25px]"
       >
         Search
       </button>

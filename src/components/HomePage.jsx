@@ -5,6 +5,7 @@ import LoginButton from "./Login";
 import LogoutButton from "./LogOut";
 import { useAuth0 } from "@auth0/auth0-react";
 import SearchBar from "./SearchBar";
+import Spinner from "./Spinner";
 
 const HomePage = () => {
   const { isLoading, error, isAuthenticated } = useAuth0();
@@ -30,7 +31,7 @@ const HomePage = () => {
   return (
     <div>
       {error && <p>Authentication error</p>}
-      {!error && isLoading && <p>loading...</p>}
+      {!error && isLoading && <Spinner />}
       {!error && !isLoading && (
         <>
           <div>
