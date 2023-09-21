@@ -4,11 +4,16 @@ import GalleryPage from "./GalleryPage";
 import LoginButton from "./Login";
 import LogoutButton from "./LogOut";
 import { useAuth0 } from "@auth0/auth0-react";
+import SearchBar from "./SearchBar";
 
 const HomePage = () => {
   const { isLoading, error, isAuthenticated } = useAuth0();
 
   const [images, setImages] = useState([]);
+
+  const getSearchImages = (images) => {
+    setImages(images);
+  };
   useEffect(() => {
     const fetchImages = async () => {
       const resp = await axios.get(
@@ -28,8 +33,13 @@ const HomePage = () => {
       {!error && isLoading && <p>loading...</p>}
       {!error && !isLoading && (
         <>
-          <LoginButton />
-          <LogoutButton />
+          <div>
+            <LoginButton />
+            <LogoutButton />
+          </div>
+          <div className="text-center mt-5">
+            <SearchBar getSearchImages={getSearchImages} />
+          </div>
           {isAuthenticated && <GalleryPage images={images} />}
         </>
       )}

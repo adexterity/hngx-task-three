@@ -14,7 +14,6 @@ import {
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
 import SortableCard from "./SortableCard";
-import SearchBar from "./SearchBar";
 
 const GalleryPage = ({ images }) => {
   const [newImages, setNewImages] = useState(images);
@@ -46,7 +45,6 @@ const GalleryPage = ({ images }) => {
 
   return (
     <div className="container grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 my-10 max-w-7xl mx-auto px-4">
-      <SearchBar />
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
